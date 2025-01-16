@@ -1,0 +1,92 @@
+@import url(home.css);
+
+/***** CONTAINER *****/
+.container-navbar{
+    background-color:rgb(255, 255, 255);
+    width: 100%;
+    display: flex;
+}.navbar{
+    padding: 20px;
+    display:flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/***** LOGO NAV *****/
+.navbar__logo {
+    text-decoration: none;
+    display: flex;
+    cursor: pointer;
+    margin-left: 90px;
+}.navbar__logo span{ 
+    font-family: "Anton", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    align-content: center;
+    font-size: 30pt;
+}.navbar__logo img{
+    height: 70px;
+    margin-right: 20px;
+}
+
+/***** LOGO NAV *****/
+.navbar-btn img{
+    height: 40px;
+}.navbar-btn{
+    width: 60px;
+    height: 60px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}.navbar-btn:before{
+    content: '';
+    background: linear-gradient(45deg, #00ffd5,#1ccaf1, #002bff, #7a00ff,#a86aff,#00ffd5);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}.navbar-btn:active {
+    color: white
+}
+
+.navbar-btn:active:after {
+    background: white;
+}
+
+.navbar-btn:hover:before {
+    opacity: 1;
+}
+
+.navbar-btn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
